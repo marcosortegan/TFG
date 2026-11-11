@@ -1,0 +1,57 @@
+\documentclass[12pt,a4paper,oneside]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{subfiles}
+\usepackage[hidelinks]{hyperref}
+
+\graphicspath{{\subfix{figuras/}}}
+
+\newcommand{\titulo}{Título del Trabajo de Fin de Grado}
+\newcommand{\autor}{Nombre y apellidos}
+\newcommand{\fecha}{\today}
+\title{\titulo}
+\author{\autor}
+\date{\fecha}
+
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+    \centering
+    {\Large Universidad / Centro\par}
+    \vspace{2cm}
+    {\huge\bfseries \titulo\par}
+    \vspace{2cm}
+    {\Large Trabajo de Fin de Grado\par}
+    \vfill
+    {\large Autor/a: \autor\par}
+    \vspace{0.5cm}
+    {\large Tutor/a: Nombre del tutor o tutora\par}
+    \vspace{1cm}
+    {\large \fecha\par}
+\end{titlepage}
+\setcounter{page}{2}
+
+\chapter*{Resumen}
+\input{capitulos/resumen}
+\addcontentsline{toc}{chapter}{Resumen}
+
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+\subfile{capitulos/introduccion}
+\subfile{capitulos/conclusiones}
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{bibliografia/referencias}
+
+\end{document}
